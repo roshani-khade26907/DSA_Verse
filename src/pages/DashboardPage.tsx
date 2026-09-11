@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Flame, 
@@ -47,10 +47,10 @@ export const DashboardPage: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-8">
       
       {/* Top Greeting Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-purple-500/15">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-teal-500/15">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white flex items-center">
-            Good afternoon, Prisha 👋
+            Good afternoon, Prisha ðŸ‘‹
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">Ready to continue your DSA journey today?</p>
         </div>
@@ -58,14 +58,14 @@ export const DashboardPage: React.FC = () => {
         <div className="flex items-center space-x-3">
           <Link
             to="/roadmap"
-            className="px-4 py-2 rounded-xl bg-slate-900 border border-purple-500/30 text-purple-300 text-xs font-semibold hover:bg-slate-800 transition-all flex items-center space-x-1.5"
+            className="px-4 py-2 rounded-xl bg-slate-900 border border-teal-500/30 text-teal-300 text-xs font-semibold hover:bg-slate-800 transition-all flex items-center space-x-1.5"
           >
             <BookOpen className="w-3.5 h-3.5" />
             <span>View Full Roadmap</span>
           </Link>
           <Link
             to="/mentor"
-            className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-lg shadow-purple-600/30 transition-all flex items-center space-x-1.5"
+            className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-lg shadow-teal-600/30 transition-all flex items-center space-x-1.5"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>AI Mentor</span>
@@ -77,13 +77,13 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
         
         {/* Overall Progress */}
-        <div className="p-4 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel">
+        <div className="p-4 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel">
           <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
             <span>Overall Progress</span>
-            <BookOpen className="w-4 h-4 text-purple-400" />
+            <BookOpen className="w-4 h-4 text-teal-400" />
           </div>
           <div className="text-2xl font-black text-white font-mono">{mockUser.overallProgress}%</div>
-          <div className="text-[11px] text-purple-400 mt-1">{mockUser.topicsCompleted} / {mockUser.totalTopics} Topics Completed</div>
+          <div className="text-[11px] text-teal-400 mt-1">{mockUser.topicsCompleted} / {mockUser.totalTopics} Topics Completed</div>
         </div>
 
         {/* Problems Solved */}
@@ -124,7 +124,7 @@ export const DashboardPage: React.FC = () => {
         <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 glass-panel col-span-2 lg:col-span-1">
           <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
             <span>Coding Level</span>
-            <Target className="w-4 h-4 text-indigo-400" />
+            <Target className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="text-lg font-bold text-white mt-1">{mockUser.level}</div>
           <div className="text-[11px] text-slate-400 mt-1">Computer Science (3rd Yr)</div>
@@ -133,32 +133,32 @@ export const DashboardPage: React.FC = () => {
       </div>
 
       {/* Recommended Next Step Prominent Banner */}
-      <div className="p-6 rounded-3xl bg-gradient-to-r from-violet-950/80 via-purple-950/50 to-indigo-950/80 border border-purple-500/30 glass-panel shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="p-6 rounded-3xl bg-gradient-to-r from-teal-950/80 via-teal-950/50 to-emerald-950/80 border border-teal-500/30 glass-panel shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold border border-purple-500/30">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold border border-teal-500/30">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>Smart Next-Step Recommendation</span>
           </div>
           <h2 className="text-2xl font-extrabold text-white flex items-center">
-            Binary Search — Easy
+            Binary Search â€” Easy
             <span className="ml-3"><DifficultyBadge difficulty="Easy" size="sm" /></span>
           </h2>
           <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
-            <strong className="text-purple-300">Reason:</strong> You completed Arrays and achieved 82% accuracy in Linear Search. Solving Binary Search now consolidates $O(\log n)$ search intuition.
+            <strong className="text-teal-300">Reason:</strong> You completed Arrays and achieved 82% accuracy in Linear Search. Solving Binary Search now consolidates $O(\log n)$ search intuition.
           </p>
         </div>
 
         <div className="flex items-center space-x-3 shrink-0">
           <Link
             to="/editor/binary-search"
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-600/30 transition-all flex items-center space-x-2"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold shadow-lg shadow-teal-600/30 transition-all flex items-center space-x-2"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
             <span>Start Problem</span>
           </Link>
           <Link
             to="/learn/searching"
-            className="px-5 py-3 rounded-xl bg-slate-900 border border-purple-500/30 text-purple-300 text-xs font-semibold hover:bg-slate-800 transition-all"
+            className="px-5 py-3 rounded-xl bg-slate-900 border border-teal-500/30 text-teal-300 text-xs font-semibold hover:bg-slate-800 transition-all"
           >
             View Topic
           </Link>
@@ -169,26 +169,26 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         {/* Continue Learning Card */}
-        <div className="md:col-span-2 p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+        <div className="md:col-span-2 p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <div className="flex items-center space-x-2">
-              <BookOpen className="w-5 h-5 text-purple-400" />
+              <BookOpen className="w-5 h-5 text-teal-400" />
               <h3 className="text-base font-bold text-white">Continue Learning: Recursion</h3>
             </div>
-            <span className="text-xs font-mono text-purple-400 font-semibold">62% Complete</span>
+            <span className="text-xs font-mono text-teal-400 font-semibold">62% Complete</span>
           </div>
           
           <p className="text-xs text-slate-300 leading-relaxed">
             Next concept: <strong className="text-white">Call Stack Unwinding & Base Conditions</strong>. Master state space trees before moving to Backtracking.
           </p>
 
-          <ProgressBar progress={62} color="purple" showLabel />
+          <ProgressBar progress={62} color="teal" showLabel />
 
           <div className="pt-2 flex items-center justify-between">
             <span className="text-xs text-slate-400 font-mono">6 of 15 Problems Solved</span>
             <Link
               to="/learn/recursion"
-              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md transition-all flex items-center space-x-1.5"
+              className="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-md transition-all flex items-center space-x-1.5"
             >
               <span>Continue Learning</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -197,7 +197,7 @@ export const DashboardPage: React.FC = () => {
         </div>
 
         {/* Daily Goal Card */}
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4 flex flex-col justify-between">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div className="flex items-center space-x-2">
@@ -238,13 +238,13 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Topic Progress Breakdown */}
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h3 className="text-base font-bold text-white flex items-center">
-              <BarChart3 className="w-4 h-4 mr-2 text-purple-400" /> Topic Progress & Status
+              <BarChart3 className="w-4 h-4 mr-2 text-teal-400" /> Topic Progress & Status
             </h3>
-            <Link to="/analytics" className="text-xs text-purple-400 hover:text-purple-300 font-semibold">
-              Full Analytics →
+            <Link to="/analytics" className="text-xs text-teal-400 hover:text-teal-300 font-semibold">
+              Full Analytics â†’
             </Link>
           </div>
 
@@ -272,7 +272,7 @@ export const DashboardPage: React.FC = () => {
         </div>
 
         {/* Recent Activity Feed */}
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h3 className="text-base font-bold text-white flex items-center">
               <Clock className="w-4 h-4 mr-2 text-blue-400" /> Recent Activity
@@ -284,7 +284,7 @@ export const DashboardPage: React.FC = () => {
             {recentActivities.map((act, idx) => (
               <div key={idx} className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <span className="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                  <span className="p-2 rounded-lg bg-teal-500/10 text-teal-400">
                     <CheckCircle2 className="w-4 h-4" />
                   </span>
                   <div>
@@ -308,3 +308,4 @@ export const DashboardPage: React.FC = () => {
     </div>
   );
 };
+

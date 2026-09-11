@@ -2,24 +2,58 @@
 @import "tailwindcss";
 
 :root {
-  --bg-dark: #090d16;
-  --bg-card: #0f172a;
-  --bg-card-hover: #1e293b;
-  --accent-purple: #8b5cf6;
-  --accent-violet: #7c3aed;
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --border-dark: rgba(139, 92, 246, 0.15);
-  --border-glow: rgba(139, 92, 246, 0.4);
+  /* Light Mode Variables */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  
+  --accent-teal: #14B8A6;
+  --accent-teal-bright: #2DD4BF;
+  --accent-teal-deep: #0F766E;
+  --accent-teal-dark: #134E4A;
+  
+  --border-color: rgba(20, 184, 166, 0.2);
+  --border-glow: rgba(20, 184, 166, 0.4);
+
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+  
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(20, 184, 166, 0.15);
+  --glass-card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.8) 100%);
+  --grid-pattern: rgba(20, 184, 166, 0.05);
+}
+
+.dark {
+  /* Dark Mode Variables */
+  --bg-primary: #061417; /* Teal dark background from landing page */
+  --bg-secondary: #0f172a;
+  --text-primary: #f3f4f6;
+  --text-secondary: #94a3b8;
+  
+  --border-color: rgba(45, 212, 191, 0.15); /* Bright teal with opacity */
+  --border-glow: rgba(45, 212, 191, 0.4);
+
+  --scrollbar-track: #061417;
+  --scrollbar-thumb: #134e4a;
+  --scrollbar-thumb-hover: #0f766e;
+  
+  --glass-bg: rgba(6, 20, 23, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-card-bg: linear-gradient(135deg, rgba(6, 20, 23, 0.8) 0%, rgba(15, 118, 110, 0.15) 100%);
+  --grid-pattern: rgba(255, 255, 255, 0.03);
 }
 
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: var(--bg-dark);
-  color: #f3f4f6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code, pre, .font-mono {
@@ -33,32 +67,32 @@ code, pre, .font-mono {
 }
 
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Glassmorphism utility */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.75);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
+  background: var(--glass-card-bg);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(139, 92, 246, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
 
 .glass-card-hover {
@@ -66,26 +100,33 @@ code, pre, .font-mono {
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(139, 92, 246, 0.45);
+  border-color: var(--border-glow);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(20, 184, 166, 0.15);
 }
 
 /* Glowing text and borders */
-.text-gradient-purple {
-  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #3b82f6 100%);
+.text-gradient-primary {
+  background: linear-gradient(135deg, #2DD4BF 0%, #14B8A6 50%, #0F766E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Keep old classes mapping to new teal colors so we don't break existing components before refactoring */
+.text-gradient-purple, .text-gradient-teal {
+  background: linear-gradient(135deg, #2DD4BF 0%, #14B8A6 50%, #0F766E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #2DD4BF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.glow-purple {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+.glow-primary, .glow-purple, .glow-teal {
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.35);
 }
 
 .glow-blue {
@@ -98,24 +139,35 @@ code, pre, .font-mono {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.2);
   }
   50% {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 30px rgba(20, 184, 166, 0.5);
   }
 }
 
-/* Custom Heatmap intensities */
-.heatmap-0 { background-color: #1e293b; }
-.heatmap-1 { background-color: rgba(139, 92, 246, 0.3); }
-.heatmap-2 { background-color: rgba(139, 92, 246, 0.55); }
-.heatmap-3 { background-color: rgba(139, 92, 246, 0.8); }
-.heatmap-4 { background-color: #a78bfa; box-shadow: 0 0 8px rgba(167, 139, 250, 0.6); }
+.glass-card-teal-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-teal-hover:hover {
+  border-color: rgba(20, 184, 166, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(20, 184, 166, 0.15);
+}
+
+/* Custom Heatmap intensities (Mapped to teal/emerald) */
+.heatmap-0 { background-color: var(--bg-secondary); border: 1px solid var(--border-color); }
+.heatmap-1 { background-color: rgba(20, 184, 166, 0.3); }
+.heatmap-2 { background-color: rgba(20, 184, 166, 0.55); }
+.heatmap-3 { background-color: rgba(20, 184, 166, 0.8); }
+.heatmap-4 { background-color: #14B8A6; box-shadow: 0 0 8px rgba(20, 184, 166, 0.6); }
 
 /* Grid overlay background */
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-pattern) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-pattern) 1px, transparent 1px);
 }
+

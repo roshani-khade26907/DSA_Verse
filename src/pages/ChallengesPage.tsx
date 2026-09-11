@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { Award, ArrowRight } from 'lucide-react';
 import { mockChallenges } from '../data/dsaData';
@@ -10,7 +10,7 @@ export const ChallengesPage: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-6">
       
       {/* Header */}
-      <div className="pb-4 border-b border-purple-500/15">
+      <div className="pb-4 border-b border-teal-500/15">
         <h1 className="text-2xl sm:text-4xl font-extrabold text-white flex items-center">
           <Award className="w-8 h-8 mr-3 text-amber-400" />
           DSA Coding Challenges
@@ -27,11 +27,11 @@ export const ChallengesPage: React.FC = () => {
           return (
             <div
               key={ch.id}
-              className="p-6 rounded-3xl bg-slate-900/80 border border-purple-500/20 glass-panel shadow-xl flex flex-col justify-between space-y-4"
+              className="p-6 rounded-3xl bg-slate-900/80 border border-teal-500/20 glass-panel shadow-xl flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-teal-500/20 text-teal-300 border border-teal-500/30">
                     {ch.durationDays} Days Sprint
                   </span>
                   <DifficultyBadge difficulty={ch.difficulty} size="sm" />
@@ -53,15 +53,15 @@ export const ChallengesPage: React.FC = () => {
               <div className="space-y-3 pt-3 border-t border-slate-800/80">
                 <div className="flex justify-between text-xs text-slate-400 font-mono">
                   <span>Progress: {ch.completedProblems} / {ch.totalProblems} Problems</span>
-                  <span className="text-purple-400 font-bold">{progress}%</span>
+                  <span className="text-teal-400 font-bold">{progress}%</span>
                 </div>
 
-                <ProgressBar progress={progress} color="purple" height="sm" />
+                <ProgressBar progress={progress} color="teal" height="sm" />
 
                 <div className="pt-2">
                   <Link
                     to="/practice"
-                    className="w-full py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md transition-all flex items-center justify-center space-x-1.5"
+                    className="w-full py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-md transition-all flex items-center justify-center space-x-1.5"
                   >
                     <span>Continue Challenge</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -77,3 +77,4 @@ export const ChallengesPage: React.FC = () => {
     </div>
   );
 };
+

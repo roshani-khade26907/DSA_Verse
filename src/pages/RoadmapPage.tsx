@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
@@ -48,12 +48,12 @@ export const RoadmapPage: React.FC = () => {
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3 pt-4">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold glow-purple">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-900/30 border border-teal-500/30 text-teal-300 text-xs font-semibold glow-teal">
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>Curated Engineering Pathway</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          C++ DSA <span className="text-gradient-purple">Roadmap</span>
+          C++ DSA <span className="text-gradient-teal">Roadmap</span>
         </h1>
         <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
           Sequential 12-stage learning path from core C++ fundamentals to advanced graph traversals and dynamic programming.
@@ -67,7 +67,7 @@ export const RoadmapPage: React.FC = () => {
           <span>Completed</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(139,92,246,0.5)]"></span>
+          <span className="w-3 h-3 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(139,92,246,0.5)]"></span>
           <span>In Progress</span>
         </div>
         <div className="flex items-center space-x-2">
@@ -81,7 +81,7 @@ export const RoadmapPage: React.FC = () => {
       </div>
 
       {/* Vertical Flow Pathway */}
-      <div className="relative border-l-2 border-purple-500/20 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-8">
+      <div className="relative border-l-2 border-teal-500/20 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-8">
         {dsaTopics.map((topic, index) => {
           const isCompleted = topic.status === 'Completed';
           const isInProgress = topic.status === 'In Progress';
@@ -95,7 +95,7 @@ export const RoadmapPage: React.FC = () => {
               <div className={`absolute -left-[31px] sm:-left-[47px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-white border-2 transition-all ${
                 isCompleted ? 'bg-emerald-600 border-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.6)]' :
                 isRecommended ? 'bg-amber-600 border-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.6)] animate-pulse' :
-                isInProgress ? 'bg-purple-600 border-purple-400 shadow-[0_0_12px_rgba(139,92,246,0.6)]' :
+                isInProgress ? 'bg-teal-600 border-teal-400 shadow-[0_0_12px_rgba(139,92,246,0.6)]' :
                 'bg-slate-900 border-slate-700 text-slate-500'
               }`}>
                 {isCompleted ? <CheckCircle2 className="w-4 h-4" /> :
@@ -107,7 +107,7 @@ export const RoadmapPage: React.FC = () => {
               <div className={`p-5 rounded-2xl border transition-all ${
                 isRecommended ? 'bg-gradient-to-r from-amber-950/30 via-slate-900 to-slate-900 border-amber-500/40 shadow-xl shadow-amber-500/10' :
                 isCompleted ? 'bg-slate-900/80 border-emerald-500/30 hover:border-emerald-500/50' :
-                isInProgress ? 'bg-slate-900/80 border-purple-500/30 hover:border-purple-500/50' :
+                isInProgress ? 'bg-slate-900/80 border-teal-500/30 hover:border-teal-500/50' :
                 'bg-slate-900/40 border-slate-800/80 opacity-75'
               } glass-panel`}>
                 
@@ -116,14 +116,14 @@ export const RoadmapPage: React.FC = () => {
                     <div className={`p-2.5 rounded-xl border ${
                       isCompleted ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' :
                       isRecommended ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' :
-                      isInProgress ? 'bg-purple-500/10 text-purple-400 border-purple-500/30' :
+                      isInProgress ? 'bg-teal-500/10 text-teal-400 border-teal-500/30' :
                       'bg-slate-800 text-slate-500 border-slate-700'
                     }`}>
                       {getTopicIcon(topic.iconName)}
                     </div>
                     <div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs font-mono text-purple-400 font-bold">STAGE {index + 1}</span>
+                        <span className="text-xs font-mono text-teal-400 font-bold">STAGE {index + 1}</span>
                         <DifficultyBadge difficulty={topic.difficulty} size="sm" />
                       </div>
                       <h3 className="text-lg font-bold text-white mt-0.5">{topic.name}</h3>
@@ -135,7 +135,7 @@ export const RoadmapPage: React.FC = () => {
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${
                       isCompleted ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' :
                       isRecommended ? 'bg-amber-500/10 text-amber-300 border-amber-500/30 animate-pulse' :
-                      isInProgress ? 'bg-purple-500/10 text-purple-300 border-purple-500/30' :
+                      isInProgress ? 'bg-teal-500/10 text-teal-300 border-teal-500/30' :
                       'bg-slate-800 text-slate-400 border-slate-700'
                     }`}>
                       {topic.status}
@@ -162,7 +162,7 @@ export const RoadmapPage: React.FC = () => {
                           ? 'bg-slate-800 text-slate-400 border border-slate-700 hover:text-white'
                           : isRecommended
                           ? 'bg-amber-500 text-slate-950 hover:bg-amber-400 shadow-md shadow-amber-500/20'
-                          : 'bg-purple-600 hover:bg-purple-500 text-white shadow-md shadow-purple-600/30'
+                          : 'bg-teal-600 hover:bg-teal-500 text-white shadow-md shadow-teal-600/30'
                       }`}
                     >
                       <span>{isCompleted ? 'Review Topic' : isLocked ? 'Unlock Topic' : 'Start Topic'}</span>
@@ -181,3 +181,4 @@ export const RoadmapPage: React.FC = () => {
     </div>
   );
 };
+

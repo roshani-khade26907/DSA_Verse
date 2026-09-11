@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Play, 
@@ -33,7 +33,7 @@ export const CodeEditorPage: React.FC = () => {
     runtime: '12 ms',
     memory: '10.4 MB',
     casesPassed: '3/3',
-    outputDetails: 'Test Case 1: [0,1] ✓ Passed\nTest Case 2: [1,2] ✓ Passed\nTest Case 3: [0,1] ✓ Passed'
+    outputDetails: 'Test Case 1: [0,1] âœ“ Passed\nTest Case 2: [1,2] âœ“ Passed\nTest Case 3: [0,1] âœ“ Passed'
   });
 
   const [showMentor, setShowMentor] = useState(false);
@@ -48,7 +48,7 @@ export const CodeEditorPage: React.FC = () => {
         runtime: '8 ms',
         memory: '9.8 MB',
         casesPassed: `${problem.testCases.length}/${problem.testCases.length}`,
-        outputDetails: problem.testCases.map((tc, i) => `Test Case ${i + 1}: ${tc.expectedOutput} ✓ Passed`).join('\n')
+        outputDetails: problem.testCases.map((tc, i) => `Test Case ${i + 1}: ${tc.expectedOutput} âœ“ Passed`).join('\n')
       });
     }, 800);
   };
@@ -63,7 +63,7 @@ export const CodeEditorPage: React.FC = () => {
         runtime: '4 ms',
         memory: '9.2 MB',
         casesPassed: '100/100',
-        outputDetails: '✓ Accepted! Beats 94.2% of C++ submissions on DSAverse.\nRuntime: 4 ms | Memory: 9.2 MB'
+        outputDetails: 'âœ“ Accepted! Beats 94.2% of C++ submissions on DSAverse.\nRuntime: 4 ms | Memory: 9.2 MB'
       });
       // Confetti celebration trigger
       confetti({
@@ -78,7 +78,7 @@ export const CodeEditorPage: React.FC = () => {
     <div className="h-[calc(100vh-4rem)] bg-slate-950 text-slate-100 flex flex-col overflow-hidden">
       
       {/* Editor Top Bar */}
-      <div className="px-4 py-2.5 bg-slate-900 border-b border-purple-500/20 flex items-center justify-between shrink-0">
+      <div className="px-4 py-2.5 bg-slate-900 border-b border-teal-500/20 flex items-center justify-between shrink-0">
         
         <div className="flex items-center space-x-3">
           <Link to="/practice" className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-colors">
@@ -91,7 +91,7 @@ export const CodeEditorPage: React.FC = () => {
         </div>
 
         <div className="flex items-center space-x-3">
-          <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-950 text-purple-300 border border-slate-800">
+          <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-950 text-teal-300 border border-slate-800">
             C++ 20 (GCC)
           </span>
 
@@ -115,7 +115,7 @@ export const CodeEditorPage: React.FC = () => {
           <button
             onClick={handleSubmit}
             disabled={isRunning || isSubmitting}
-            className="px-4 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md shadow-purple-600/30 transition-all flex items-center space-x-1.5"
+            className="px-4 py-1.5 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold shadow-md shadow-teal-600/30 transition-all flex items-center space-x-1.5"
           >
             <Send className="w-3.5 h-3.5" />
             <span>{isSubmitting ? 'Submitting...' : 'Submit'}</span>
@@ -124,7 +124,7 @@ export const CodeEditorPage: React.FC = () => {
           <button
             onClick={() => setShowMentor(!showMentor)}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 border ${
-              showMentor ? 'bg-purple-600 text-white border-purple-400' : 'bg-purple-500/10 text-purple-300 border-purple-500/30 hover:bg-purple-500/20'
+              showMentor ? 'bg-teal-600 text-white border-teal-400' : 'bg-teal-500/10 text-teal-300 border-teal-500/30 hover:bg-teal-500/20'
             }`}
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
@@ -144,19 +144,19 @@ export const CodeEditorPage: React.FC = () => {
           <div className="px-4 py-2 border-b border-slate-800 bg-slate-950/80 flex items-center space-x-4 text-xs font-semibold">
             <button
               onClick={() => setActiveTab('statement')}
-              className={`py-1 ${activeTab === 'statement' ? 'text-purple-400 border-b-2 border-purple-500' : 'text-slate-400 hover:text-slate-200'}`}
+              className={`py-1 ${activeTab === 'statement' ? 'text-teal-400 border-b-2 border-teal-500' : 'text-slate-400 hover:text-slate-200'}`}
             >
               Description
             </button>
             <button
               onClick={() => setActiveTab('hints')}
-              className={`py-1 ${activeTab === 'hints' ? 'text-purple-400 border-b-2 border-purple-500' : 'text-slate-400 hover:text-slate-200'}`}
+              className={`py-1 ${activeTab === 'hints' ? 'text-teal-400 border-b-2 border-teal-500' : 'text-slate-400 hover:text-slate-200'}`}
             >
               Hints ({problem.hints.length})
             </button>
             <button
               onClick={() => setActiveTab('solution')}
-              className={`py-1 ${activeTab === 'solution' ? 'text-purple-400 border-b-2 border-purple-500' : 'text-slate-400 hover:text-slate-200'}`}
+              className={`py-1 ${activeTab === 'solution' ? 'text-teal-400 border-b-2 border-teal-500' : 'text-slate-400 hover:text-slate-200'}`}
             >
               Official Solution
             </button>
@@ -171,7 +171,7 @@ export const CodeEditorPage: React.FC = () => {
                   <h3 className="text-base font-bold text-white mb-2">{problem.title}</h3>
                   <div className="flex items-center space-x-3 text-slate-400 font-mono text-[11px]">
                     <span>Acceptance: {problem.acceptance}</span>
-                    <span>•</span>
+                    <span>â€¢</span>
                     <span>Platform: {problem.platform}</span>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export const CodeEditorPage: React.FC = () => {
                   <h4 className="font-bold text-white uppercase text-[10px] tracking-wider">Examples</h4>
                   {problem.examples.map((ex, idx) => (
                     <div key={idx} className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 font-mono space-y-1">
-                      <div><strong className="text-purple-400">Input:</strong> {ex.input}</div>
+                      <div><strong className="text-teal-400">Input:</strong> {ex.input}</div>
                       <div><strong className="text-emerald-400">Output:</strong> {ex.output}</div>
                       <div className="text-slate-400 font-sans mt-1 text-[11px]">
                         <strong>Explanation:</strong> {ex.explanation}
@@ -205,10 +205,10 @@ export const CodeEditorPage: React.FC = () => {
                 </div>
 
                 {/* Expected Complexity */}
-                <div className="p-3.5 rounded-xl bg-slate-950 border border-purple-500/20 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl bg-slate-950 border border-teal-500/20 flex items-center justify-between">
                   <div>
                     <div className="text-[10px] text-slate-400 uppercase tracking-wider">Expected Complexity</div>
-                    <div className="font-mono text-purple-300 font-bold mt-0.5">
+                    <div className="font-mono text-teal-300 font-bold mt-0.5">
                       Time: {problem.expectedTime} | Space: {problem.expectedSpace}
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export const CodeEditorPage: React.FC = () => {
             {activeTab === 'solution' && (
               <div className="space-y-4">
                 <h3 className="text-sm font-bold text-white">C++ Official Solution</h3>
-                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 overflow-x-auto font-mono text-xs text-purple-300">
+                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 overflow-x-auto font-mono text-xs text-teal-300">
                   <pre>{problem.solutionCode}</pre>
                 </div>
               </div>
@@ -267,13 +267,13 @@ export const CodeEditorPage: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => setConsoleTab('testcases')}
-                  className={`py-0.5 ${consoleTab === 'testcases' ? 'text-purple-400 border-b-2 border-purple-500' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-0.5 ${consoleTab === 'testcases' ? 'text-teal-400 border-b-2 border-teal-500' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   Test Cases
                 </button>
                 <button
                   onClick={() => setConsoleTab('result')}
-                  className={`py-0.5 ${consoleTab === 'result' ? 'text-purple-400 border-b-2 border-purple-500' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-0.5 ${consoleTab === 'result' ? 'text-teal-400 border-b-2 border-teal-500' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   Execution Result
                 </button>
@@ -297,7 +297,7 @@ export const CodeEditorPage: React.FC = () => {
                   {problem.testCases.map((tc, i) => (
                     <div key={i} className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
                       <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Test Case {i + 1}</div>
-                      <div>Input: <span className="text-purple-300">{tc.input}</span></div>
+                      <div>Input: <span className="text-teal-300">{tc.input}</span></div>
                       <div>Expected: <span className="text-emerald-400">{tc.expectedOutput}</span></div>
                     </div>
                   ))}
@@ -305,7 +305,7 @@ export const CodeEditorPage: React.FC = () => {
               ) : (
                 <div className="whitespace-pre-wrap text-slate-300 leading-relaxed">
                   {isRunning || isSubmitting ? (
-                    <div className="flex items-center space-x-2 text-purple-400">
+                    <div className="flex items-center space-x-2 text-teal-400">
                       <Sparkles className="w-4 h-4 animate-spin" />
                       <span>Compiling C++20 code & executing test suites...</span>
                     </div>
@@ -332,3 +332,4 @@ export const CodeEditorPage: React.FC = () => {
     </div>
   );
 };
+

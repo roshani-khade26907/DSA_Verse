@@ -31,19 +31,35 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Initialize theme
+const initializeTheme = () => {
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+};
+
+
 export const AppContent: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
 
-  // Hide global navbar and footer on editor and auth pages for maximal coding space
+  // Hide global navbar and footer on editor, auth, and the root landing pages
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
   const isEditorPage = location.pathname.startsWith('/editor');
+  const isLandingPage = location.pathname === '/';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-purple-500 selection:text-white">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-teal-500/30 selection:text-teal-900 dark:selection:text-white">
       <ScrollToTop />
       
-      {!isAuthPage && !isEditorPage && (
+      {!isAuthPage && !isEditorPage && !isLandingPage && (
         <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
       )}
 
@@ -70,7 +86,7 @@ export const AppContent: React.FC = () => {
         </Routes>
       </main>
 
-      {!isAuthPage && !isEditorPage && <Footer />}
+      {!isAuthPage && !isEditorPage && !isLandingPage && <Footer />}
 
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
@@ -78,6 +94,10 @@ export const AppContent: React.FC = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    initializeTheme();
+  }, []);
+
   return (
     <BrowserRouter>
       <AppContent />

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 interface ProgressBarProps {
   progress: number; // 0 to 100
@@ -24,7 +24,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   }[height];
 
   const colorGradients = {
-    purple: 'from-violet-600 via-purple-500 to-indigo-500 shadow-[0_0_12px_rgba(139,92,246,0.5)]',
+    purple: 'from-teal-600 via-teal-500 to-emerald-500 shadow-[0_0_12px_rgba(139,92,246,0.5)]',
     blue: 'from-blue-600 via-cyan-500 to-teal-400 shadow-[0_0_12px_rgba(59,130,246,0.5)]',
     emerald: 'from-emerald-600 via-teal-500 to-green-400 shadow-[0_0_12px_rgba(16,185,129,0.5)]',
     amber: 'from-amber-600 via-orange-500 to-yellow-400 shadow-[0_0_12px_rgba(245,158,11,0.5)]',
@@ -48,3 +48,4 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     </div>
   );
 };
+

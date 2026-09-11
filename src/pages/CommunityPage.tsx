@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   Users, 
   MessageSquare, 
@@ -62,10 +62,10 @@ export const CommunityPage: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto space-y-6">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-purple-500/15">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-teal-500/15">
         <div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white flex items-center">
-            <Users className="w-8 h-8 mr-3 text-purple-400" />
+            <Users className="w-8 h-8 mr-3 text-teal-400" />
             Engineering Student Forum
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
@@ -75,7 +75,7 @@ export const CommunityPage: React.FC = () => {
 
         <button
           onClick={() => setShowNewPostModal(true)}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-600/30 transition-all flex items-center space-x-1.5 shrink-0"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold shadow-lg shadow-teal-600/30 transition-all flex items-center space-x-1.5 shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>New Discussion</span>
@@ -83,7 +83,7 @@ export const CommunityPage: React.FC = () => {
       </div>
 
       {/* Category Tabs & Search */}
-      <div className="p-4 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+      <div className="p-4 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
         
         <div className="flex items-center space-x-2 overflow-x-auto w-full md:w-auto">
           {['All', 'Recursion', 'Searching', 'Tips', 'Interview Prep'].map((cat) => (
@@ -92,7 +92,7 @@ export const CommunityPage: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-3 py-1.5 rounded-xl font-semibold transition-all shrink-0 ${
                 activeCategory === cat
-                  ? 'bg-purple-600 text-white shadow-md'
+                  ? 'bg-teal-600 text-white shadow-md'
                   : 'bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700'
               }`}
             >
@@ -108,7 +108,7 @@ export const CommunityPage: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search discussions..."
-            className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"
+            className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500"
           />
         </div>
 
@@ -119,11 +119,11 @@ export const CommunityPage: React.FC = () => {
         {filteredPosts.map((post) => (
           <div
             key={post.id}
-            className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4 shadow-xl"
+            className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4 shadow-xl"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <img src={post.authorAvatar} alt={post.author} className="w-9 h-9 rounded-full object-cover border border-purple-500/40" />
+                <img src={post.authorAvatar} alt={post.author} className="w-9 h-9 rounded-full object-cover border border-teal-500/40" />
                 <div>
                   <h4 className="text-xs font-bold text-white">{post.author}</h4>
                   <p className="text-[10px] text-slate-400 font-mono">{post.authorRole}</p>
@@ -133,7 +133,7 @@ export const CommunityPage: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-base font-bold text-white hover:text-purple-300 transition-colors cursor-pointer">
+              <h3 className="text-base font-bold text-white hover:text-teal-300 transition-colors cursor-pointer">
                 {post.title}
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed font-sans">{post.content}</p>
@@ -142,7 +142,7 @@ export const CommunityPage: React.FC = () => {
             {/* Tags */}
             <div className="flex flex-wrap gap-1.5">
               {post.tags.map((t, idx) => (
-                <span key={idx} className="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                <span key={idx} className="px-2 py-0.5 rounded text-[10px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20">
                   #{t}
                 </span>
               ))}
@@ -153,9 +153,9 @@ export const CommunityPage: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => handleLike(post.id)}
-                  className="flex items-center space-x-1.5 hover:text-purple-300 transition-colors"
+                  className="flex items-center space-x-1.5 hover:text-teal-300 transition-colors"
                 >
-                  <ThumbsUp className="w-4 h-4 text-purple-400" />
+                  <ThumbsUp className="w-4 h-4 text-teal-400" />
                   <span>{post.likes}</span>
                 </button>
                 <button className="flex items-center space-x-1.5 hover:text-blue-300 transition-colors">
@@ -179,13 +179,13 @@ export const CommunityPage: React.FC = () => {
       {/* New Post Modal */}
       {showNewPostModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fadeIn">
-          <div className="w-full max-w-lg bg-slate-900 border border-purple-500/30 rounded-3xl p-6 shadow-2xl glass-panel space-y-4">
+          <div className="w-full max-w-lg bg-slate-900 border border-teal-500/30 rounded-3xl p-6 shadow-2xl glass-panel space-y-4">
             
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h3 className="text-base font-bold text-white flex items-center">
-                <Sparkles className="w-4 h-4 mr-2 text-purple-400" /> Start Student Discussion
+                <Sparkles className="w-4 h-4 mr-2 text-teal-400" /> Start Student Discussion
               </h3>
-              <button onClick={() => setShowNewPostModal(false)} className="text-slate-400 hover:text-white">✕</button>
+              <button onClick={() => setShowNewPostModal(false)} className="text-slate-400 hover:text-white">âœ•</button>
             </div>
 
             <form onSubmit={handleCreatePost} className="space-y-4 text-xs">
@@ -197,7 +197,7 @@ export const CommunityPage: React.FC = () => {
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
                   placeholder="e.g. How to dry run recursive trees effectively?"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-teal-500"
                 />
               </div>
 
@@ -206,7 +206,7 @@ export const CommunityPage: React.FC = () => {
                 <select
                   value={newTag}
                   onChange={(e) => setNewTag(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-purple-500"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
                 >
                   <option value="Recursion">Recursion</option>
                   <option value="Searching">Searching</option>
@@ -224,7 +224,7 @@ export const CommunityPage: React.FC = () => {
                   value={newContent}
                   onChange={(e) => setNewContent(e.target.value)}
                   placeholder="Share your questions, insights, or code tips with fellow coders..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500 resize-none"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-teal-500 resize-none"
                 />
               </div>
 
@@ -238,7 +238,7 @@ export const CommunityPage: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold shadow-md"
+                  className="px-5 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold shadow-md"
                 >
                   Publish Post
                 </button>
@@ -252,3 +252,4 @@ export const CommunityPage: React.FC = () => {
     </div>
   );
 };
+

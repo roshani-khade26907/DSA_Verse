@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   Sparkles, 
   Send, 
@@ -104,12 +104,12 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-950 border border-purple-500/20 rounded-2xl overflow-hidden glass-panel">
+    <div className="flex flex-col h-full bg-slate-950 border border-teal-500/20 rounded-2xl overflow-hidden glass-panel">
       
       {/* Header */}
-      <div className="px-4 py-3 border-b border-slate-800 bg-gradient-to-r from-purple-950/40 to-slate-950 flex items-center justify-between">
+      <div className="px-4 py-3 border-b border-slate-800 bg-gradient-to-r from-teal-950/40 to-slate-950 flex items-center justify-between">
         <div className="flex items-center space-x-2.5">
-          <div className="w-8 h-8 rounded-xl bg-purple-600/30 border border-purple-500/40 flex items-center justify-center text-purple-300 shadow-md">
+          <div className="w-8 h-8 rounded-xl bg-teal-600/30 border border-teal-500/40 flex items-center justify-center text-teal-300 shadow-md">
             <Sparkles className="w-4 h-4 animate-pulse" />
           </div>
           <div>
@@ -117,7 +117,7 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
               AI C++ Mentor
               <span className="ml-2 w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
             </h3>
-            <p className="text-[10px] text-slate-400">Step-by-step guidance • Non-spoiler hints</p>
+            <p className="text-[10px] text-slate-400">Step-by-step guidance â€¢ Non-spoiler hints</p>
           </div>
         </div>
 
@@ -138,7 +138,7 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
           <button
             onClick={() => handleActionClick('hint')}
-            className="p-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 text-purple-300 text-xs font-medium flex items-center space-x-1.5 transition-all text-left"
+            className="p-2 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/20 text-teal-300 text-xs font-medium flex items-center space-x-1.5 transition-all text-left"
           >
             <Lightbulb className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span className="truncate">Small Hint</span>
@@ -170,9 +170,9 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
 
           <button
             onClick={() => handleActionClick('complexity')}
-            className="p-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-300 text-xs font-medium flex items-center space-x-1.5 transition-all text-left"
+            className="p-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-emerald-300 text-xs font-medium flex items-center space-x-1.5 transition-all text-left"
           >
-            <Timer className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+            <Timer className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             <span className="truncate">Complexity</span>
           </button>
 
@@ -194,18 +194,18 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
             className={`flex items-start space-x-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.sender === 'ai' && (
-              <div className="w-7 h-7 rounded-lg bg-purple-600/30 border border-purple-500/40 flex items-center justify-center text-purple-300 shrink-0 mt-0.5">
+              <div className="w-7 h-7 rounded-lg bg-teal-600/30 border border-teal-500/40 flex items-center justify-center text-teal-300 shrink-0 mt-0.5">
                 <Bot className="w-4 h-4" />
               </div>
             )}
 
             <div className={`max-w-[85%] rounded-2xl p-3.5 text-xs leading-relaxed ${
               msg.sender === 'user'
-                ? 'bg-purple-600 text-white rounded-br-none shadow-md'
-                : 'bg-slate-900/90 border border-purple-500/20 text-slate-200 rounded-bl-none shadow-lg'
+                ? 'bg-teal-600 text-white rounded-br-none shadow-md'
+                : 'bg-slate-900/90 border border-teal-500/20 text-slate-200 rounded-bl-none shadow-lg'
             }`}>
               {msg.actionTitle && (
-                <div className="text-[10px] font-bold uppercase tracking-wider text-purple-400 mb-1 flex items-center">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-teal-400 mb-1 flex items-center">
                   <Sparkles className="w-3 h-3 mr-1" /> {msg.actionTitle}
                 </div>
               )}
@@ -219,7 +219,7 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
                   <span>{msg.timestamp}</span>
                   <button
                     onClick={() => handleCopyText(msg.text, msg.id)}
-                    className="hover:text-purple-300 flex items-center space-x-1"
+                    className="hover:text-teal-300 flex items-center space-x-1"
                   >
                     {copiedId === msg.id ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                     <span>{copiedId === msg.id ? 'Copied' : 'Copy'}</span>
@@ -229,7 +229,7 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
             </div>
 
             {msg.sender === 'user' && (
-              <div className="w-7 h-7 rounded-lg bg-indigo-600/30 border border-indigo-500/40 flex items-center justify-center text-indigo-300 shrink-0 mt-0.5">
+              <div className="w-7 h-7 rounded-lg bg-emerald-600/30 border border-emerald-500/40 flex items-center justify-center text-emerald-300 shrink-0 mt-0.5">
                 <User className="w-4 h-4" />
               </div>
             )}
@@ -244,12 +244,12 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
           value={inputQuery}
           onChange={(e) => setInputQuery(e.target.value)}
           placeholder="Ask AI Mentor (e.g. 'Why does low <= high matter in binary search?')..."
-          className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50"
+          className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500/50"
         />
         <button
           type="submit"
           disabled={!inputQuery.trim()}
-          className="p-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white disabled:opacity-40 hover:from-purple-500 hover:to-indigo-500 transition-all shadow-md"
+          className="p-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 text-white disabled:opacity-40 hover:from-teal-500 hover:to-emerald-500 transition-all shadow-md"
         >
           <Send className="w-4 h-4" />
         </button>
@@ -258,3 +258,4 @@ export const AIChatPanel: React.FC<{ problemTitle?: string; codeContext?: string
     </div>
   );
 };
+

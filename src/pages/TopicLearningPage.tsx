@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   BookOpen, 
@@ -40,14 +40,14 @@ export const TopicLearningPage: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-6">
       
       {/* Top Breadcrumb & Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-purple-500/15">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-teal-500/15">
         <div>
           <div className="flex items-center space-x-2 text-xs text-slate-400 mb-1">
-            <Link to="/roadmap" className="hover:text-purple-300 flex items-center">
+            <Link to="/roadmap" className="hover:text-teal-300 flex items-center">
               <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Roadmap
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-purple-300 font-semibold">{currentTopic.name}</span>
+            <span className="text-teal-300 font-semibold">{currentTopic.name}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white flex items-center space-x-3">
             <span>{currentTopic.name}</span>
@@ -58,7 +58,7 @@ export const TopicLearningPage: React.FC = () => {
         <div className="flex items-center space-x-3">
           <button
             onClick={() => navigate(`/editor/${relatedProblems[0]?.id || 'two-sum'}`)}
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-600/30 transition-all flex items-center space-x-1.5"
+            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold shadow-lg shadow-teal-600/30 transition-all flex items-center space-x-1.5"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
             <span>Practice C++ Problems</span>
@@ -71,12 +71,12 @@ export const TopicLearningPage: React.FC = () => {
         
         {/* Left Sidebar Navigation */}
         <div className="lg:col-span-3 space-y-2">
-          <div className="p-3 rounded-2xl bg-slate-900/90 border border-purple-500/20 glass-panel space-y-1">
+          <div className="p-3 rounded-2xl bg-slate-900/90 border border-teal-500/20 glass-panel space-y-1">
             
             <button
               onClick={() => setActiveTab('concepts')}
               className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center space-x-2.5 transition-all ${
-                activeTab === 'concepts' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
+                activeTab === 'concepts' ? 'bg-teal-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
               }`}
             >
               <BookOpen className="w-4 h-4" />
@@ -86,7 +86,7 @@ export const TopicLearningPage: React.FC = () => {
             <button
               onClick={() => setActiveTab('syntax')}
               className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center space-x-2.5 transition-all ${
-                activeTab === 'syntax' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
+                activeTab === 'syntax' ? 'bg-teal-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
               }`}
             >
               <Code2 className="w-4 h-4" />
@@ -96,7 +96,7 @@ export const TopicLearningPage: React.FC = () => {
             <button
               onClick={() => setActiveTab('dryrun')}
               className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center space-x-2.5 transition-all ${
-                activeTab === 'dryrun' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
+                activeTab === 'dryrun' ? 'bg-teal-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
               }`}
             >
               <Play className="w-4 h-4 text-emerald-400" />
@@ -106,7 +106,7 @@ export const TopicLearningPage: React.FC = () => {
             <button
               onClick={() => setActiveTab('complexity')}
               className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center space-x-2.5 transition-all ${
-                activeTab === 'complexity' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
+                activeTab === 'complexity' ? 'bg-teal-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
               }`}
             >
               <Timer className="w-4 h-4 text-amber-400" />
@@ -116,7 +116,7 @@ export const TopicLearningPage: React.FC = () => {
             <button
               onClick={() => setActiveTab('mistakes')}
               className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center space-x-2.5 transition-all ${
-                activeTab === 'mistakes' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
+                activeTab === 'mistakes' ? 'bg-teal-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
               }`}
             >
               <AlertTriangle className="w-4 h-4 text-rose-400" />
@@ -126,7 +126,7 @@ export const TopicLearningPage: React.FC = () => {
             <button
               onClick={() => setActiveTab('practice')}
               className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center space-x-2.5 transition-all ${
-                activeTab === 'practice' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
+                activeTab === 'practice' ? 'bg-teal-600 text-white shadow-md' : 'text-slate-300 hover:bg-slate-800'
               }`}
             >
               <Sparkles className="w-4 h-4 text-cyan-400" />
@@ -136,8 +136,8 @@ export const TopicLearningPage: React.FC = () => {
           </div>
 
           {/* AI Quick Prompt Box */}
-          <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-950/60 to-slate-900 border border-purple-500/30 glass-panel space-y-2">
-            <div className="flex items-center space-x-2 text-xs font-bold text-purple-300">
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-teal-950/60 to-slate-900 border border-teal-500/30 glass-panel space-y-2">
+            <div className="flex items-center space-x-2 text-xs font-bold text-teal-300">
               <Sparkles className="w-4 h-4 text-amber-400" />
               <span>Need help with {currentTopic.name}?</span>
             </div>
@@ -146,7 +146,7 @@ export const TopicLearningPage: React.FC = () => {
             </p>
             <button
               onClick={() => navigate('/mentor')}
-              className="w-full py-2 rounded-xl bg-purple-600/30 hover:bg-purple-600 border border-purple-500/40 text-white text-xs font-semibold transition-all"
+              className="w-full py-2 rounded-xl bg-teal-600/30 hover:bg-teal-600 border border-teal-500/40 text-white text-xs font-semibold transition-all"
             >
               Ask AI Mentor
             </button>
@@ -162,9 +162,9 @@ export const TopicLearningPage: React.FC = () => {
             <div className="space-y-6 animate-fadeIn">
               
               {/* Beginner Friendly Explanation */}
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-3">
+              <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-3">
                 <h3 className="text-lg font-bold text-white flex items-center">
-                  <BookOpen className="w-5 h-5 mr-2 text-purple-400" /> Simple Explanation
+                  <BookOpen className="w-5 h-5 mr-2 text-teal-400" /> Simple Explanation
                 </h3>
                 <p className="text-sm text-slate-300 leading-relaxed">
                   {currentTopic.fullDesc}
@@ -172,7 +172,7 @@ export const TopicLearningPage: React.FC = () => {
               </div>
 
               {/* Key Concepts Grid */}
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+              <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
                 <h3 className="text-lg font-bold text-white flex items-center">
                   <CheckCircle2 className="w-5 h-5 mr-2 text-emerald-400" /> Important Concepts to Master
                 </h3>
@@ -180,7 +180,7 @@ export const TopicLearningPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {currentTopic.keyConcepts.map((concept, idx) => (
                     <div key={idx} className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-start space-x-3">
-                      <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold font-mono flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold font-mono flex items-center justify-center shrink-0 mt-0.5">
                         {idx + 1}
                       </span>
                       <span className="text-xs font-medium text-slate-200 leading-snug">{concept}</span>
@@ -196,10 +196,10 @@ export const TopicLearningPage: React.FC = () => {
           {activeTab === 'syntax' && (
             <div className="space-y-6 animate-fadeIn">
               
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+              <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white flex items-center">
-                    <Code2 className="w-5 h-5 mr-2 text-indigo-400" /> Standard C++ Syntax Template
+                    <Code2 className="w-5 h-5 mr-2 text-emerald-400" /> Standard C++ Syntax Template
                   </h3>
                   <button
                     onClick={() => handleCopyCode(currentTopic.cppSyntax)}
@@ -210,13 +210,13 @@ export const TopicLearningPage: React.FC = () => {
                   </button>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 overflow-x-auto font-mono text-xs text-purple-300 leading-relaxed">
+                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 overflow-x-auto font-mono text-xs text-teal-300 leading-relaxed">
                   <pre>{currentTopic.cppSyntax}</pre>
                 </div>
               </div>
 
               {/* Practical Example Code */}
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+              <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
                 <h3 className="text-lg font-bold text-white flex items-center">
                   <Sparkles className="w-5 h-5 mr-2 text-amber-400" /> Complete Example Solution
                 </h3>
@@ -228,7 +228,7 @@ export const TopicLearningPage: React.FC = () => {
                 <div className="pt-2 flex justify-end">
                   <button
                     onClick={() => navigate(`/editor/${relatedProblems[0]?.id || 'two-sum'}`)}
-                    className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md transition-all flex items-center space-x-2"
+                    className="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-md transition-all flex items-center space-x-2"
                   >
                     <Play className="w-3.5 h-3.5 fill-current" />
                     <span>Run in Code Editor</span>
@@ -241,7 +241,7 @@ export const TopicLearningPage: React.FC = () => {
 
           {/* TAB 3: STEP-BY-STEP DRY RUN VISUALIZER */}
           {activeTab === 'dryrun' && (
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-6 animate-fadeIn">
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-6 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-white flex items-center">
@@ -259,13 +259,13 @@ export const TopicLearningPage: React.FC = () => {
                   >
                     Prev Step
                   </button>
-                  <span className="text-xs text-purple-400 px-2">
+                  <span className="text-xs text-teal-400 px-2">
                     Step {dryRunIndex + 1} / {dryRunSteps.length}
                   </span>
                   <button
                     onClick={() => setDryRunIndex(Math.min(dryRunSteps.length - 1, dryRunIndex + 1))}
                     disabled={dryRunIndex === dryRunSteps.length - 1}
-                    className="px-3 py-1.5 rounded-lg bg-purple-600 disabled:opacity-40 text-white text-xs font-semibold hover:bg-purple-500"
+                    className="px-3 py-1.5 rounded-lg bg-teal-600 disabled:opacity-40 text-white text-xs font-semibold hover:bg-teal-500"
                   >
                     Next Step
                   </button>
@@ -274,9 +274,9 @@ export const TopicLearningPage: React.FC = () => {
 
               {/* Dry Run Visual Display Area */}
               {dryRunSteps[dryRunIndex] && (
-                <div className="p-6 rounded-2xl bg-slate-950 border border-purple-500/30 space-y-6">
+                <div className="p-6 rounded-2xl bg-slate-950 border border-teal-500/30 space-y-6">
                   
-                  <h4 className="text-sm font-bold text-purple-300">
+                  <h4 className="text-sm font-bold text-teal-300">
                     Step {dryRunSteps[dryRunIndex].step}: {dryRunSteps[dryRunIndex].title}
                   </h4>
 
@@ -289,7 +289,7 @@ export const TopicLearningPage: React.FC = () => {
                           <span className="text-[10px] font-mono text-slate-500 mb-1">Index {idx}</span>
                           <div className={`w-12 h-14 rounded-xl flex items-center justify-center font-mono text-sm font-bold transition-all ${
                             isHighlighted
-                              ? 'bg-purple-600 text-white ring-4 ring-purple-500/50 scale-110 shadow-lg shadow-purple-600/50'
+                              ? 'bg-teal-600 text-white ring-4 ring-teal-500/50 scale-110 shadow-lg shadow-teal-600/50'
                               : 'bg-slate-800 text-slate-300 border border-slate-700'
                           }`}>
                             {val}
@@ -302,7 +302,7 @@ export const TopicLearningPage: React.FC = () => {
                   {/* Pointer Readout */}
                   <div className="flex flex-wrap items-center gap-3">
                     {Object.entries(dryRunSteps[dryRunIndex].pointers).map(([pName, pVal]) => (
-                      <span key={pName} className="px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono">
+                      <span key={pName} className="px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono">
                         {pName} = {pVal}
                       </span>
                     ))}
@@ -321,15 +321,15 @@ export const TopicLearningPage: React.FC = () => {
 
           {/* TAB 4: COMPLEXITY ANALYSIS */}
           {activeTab === 'complexity' && (
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-6 animate-fadeIn">
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-6 animate-fadeIn">
               <h3 className="text-lg font-bold text-white flex items-center">
                 <Timer className="w-5 h-5 mr-2 text-amber-400" /> Complexity Breakdown
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-5 rounded-2xl bg-slate-950 border border-purple-500/30 glass-panel space-y-2">
+                <div className="p-5 rounded-2xl bg-slate-950 border border-teal-500/30 glass-panel space-y-2">
                   <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Time Complexity</span>
-                  <div className="text-3xl font-extrabold text-purple-400 font-mono">
+                  <div className="text-3xl font-extrabold text-teal-400 font-mono">
                     {currentTopic.complexity.time}
                   </div>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -349,14 +349,14 @@ export const TopicLearningPage: React.FC = () => {
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 leading-relaxed">
-                <strong className="text-purple-300">Explanation:</strong> {currentTopic.complexity.description}
+                <strong className="text-teal-300">Explanation:</strong> {currentTopic.complexity.description}
               </div>
             </div>
           )}
 
           {/* TAB 5: COMMON MISTAKES */}
           {activeTab === 'mistakes' && (
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4 animate-fadeIn">
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4 animate-fadeIn">
               <h3 className="text-lg font-bold text-white flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2 text-rose-400" /> Common Beginner Pitfalls & Fixes
               </h3>
@@ -379,7 +379,7 @@ export const TopicLearningPage: React.FC = () => {
 
           {/* TAB 6: PRACTICE QUESTIONS */}
           {activeTab === 'practice' && (
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4 animate-fadeIn">
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4 animate-fadeIn">
               <h3 className="text-lg font-bold text-white flex items-center">
                 <Sparkles className="w-5 h-5 mr-2 text-cyan-400" /> Curated C++ Practice Problems
               </h3>
@@ -388,19 +388,19 @@ export const TopicLearningPage: React.FC = () => {
                 {relatedProblems.map((prob) => (
                   <div
                     key={prob.id}
-                    className="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-purple-500/40 flex items-center justify-between transition-all"
+                    className="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-teal-500/40 flex items-center justify-between transition-all"
                   >
                     <div>
                       <div className="flex items-center space-x-3">
                         <span className="text-sm font-bold text-white">{prob.title}</span>
                         <DifficultyBadge difficulty={prob.difficulty} size="sm" />
                       </div>
-                      <p className="text-xs text-slate-400 mt-1">Acceptance: {prob.acceptance} • Platform: {prob.platform}</p>
+                      <p className="text-xs text-slate-400 mt-1">Acceptance: {prob.acceptance} â€¢ Platform: {prob.platform}</p>
                     </div>
 
                     <Link
                       to={`/editor/${prob.id}`}
-                      className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all flex items-center space-x-1"
+                      className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold transition-all flex items-center space-x-1"
                     >
                       <span>Solve Problem</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -418,3 +418,4 @@ export const TopicLearningPage: React.FC = () => {
     </div>
   );
 };
+

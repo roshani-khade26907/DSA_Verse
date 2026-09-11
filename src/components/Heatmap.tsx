@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Flame } from 'lucide-react';
 
 interface HeatmapProps {
@@ -40,7 +40,7 @@ export const Heatmap: React.FC<HeatmapProps> = ({ streak = 5 }) => {
   const totalSubmissions = days.reduce((acc, curr) => acc + curr.count, 0);
 
   return (
-    <div className="w-full bg-slate-900/80 border border-purple-500/20 rounded-2xl p-5 glass-panel relative overflow-hidden">
+    <div className="w-full bg-slate-900/80 border border-teal-500/20 rounded-2xl p-5 glass-panel relative overflow-hidden">
       
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-800">
@@ -52,7 +52,7 @@ export const Heatmap: React.FC<HeatmapProps> = ({ streak = 5 }) => {
             <h3 className="text-sm font-bold text-slate-100 flex items-center">
               Coding Activity Heatmap
               <span className="ml-2 text-xs font-mono text-amber-400 font-semibold px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">
-                {streak} Day Streak 🔥
+                {streak} Day Streak ðŸ”¥
               </span>
             </h3>
             <p className="text-xs text-slate-400">{totalSubmissions} problems & submissions in the last year</p>
@@ -108,7 +108,7 @@ export const Heatmap: React.FC<HeatmapProps> = ({ streak = 5 }) => {
                   }}
                   onMouseLeave={() => setTooltip(null)}
                   className={`w-3 h-3 rounded-[2px] transition-all hover:scale-125 cursor-pointer ${
-                    day.level === 0 ? 'heatmap-0 border border-slate-800/80 hover:border-purple-400' :
+                    day.level === 0 ? 'heatmap-0 border border-slate-800/80 hover:border-teal-400' :
                     day.level === 1 ? 'heatmap-1' :
                     day.level === 2 ? 'heatmap-2' :
                     day.level === 3 ? 'heatmap-3' : 'heatmap-4'
@@ -125,7 +125,7 @@ export const Heatmap: React.FC<HeatmapProps> = ({ streak = 5 }) => {
       {tooltip && (
         <div
           style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
-          className="fixed z-50 px-2 py-1 bg-slate-950 border border-purple-500/40 text-purple-200 text-[11px] font-mono rounded shadow-xl pointer-events-none -translate-x-1/2"
+          className="fixed z-50 px-2 py-1 bg-slate-950 border border-teal-500/40 text-teal-200 text-[11px] font-mono rounded shadow-xl pointer-events-none -translate-x-1/2"
         >
           {tooltip.text}
         </div>
@@ -134,3 +134,4 @@ export const Heatmap: React.FC<HeatmapProps> = ({ streak = 5 }) => {
     </div>
   );
 };
+

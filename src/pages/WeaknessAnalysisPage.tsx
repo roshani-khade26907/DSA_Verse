@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   BarChart3, 
@@ -42,10 +42,10 @@ export const WeaknessAnalysisPage: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-8">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-purple-500/15">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-teal-500/15">
         <div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white flex items-center">
-            <BarChart3 className="w-8 h-8 mr-3 text-purple-400" />
+            <BarChart3 className="w-8 h-8 mr-3 text-teal-400" />
             Your DSA Performance & Analytics
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
@@ -55,7 +55,7 @@ export const WeaknessAnalysisPage: React.FC = () => {
 
         <Link
           to="/recommendations"
-          className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-lg shadow-purple-600/30 transition-all flex items-center space-x-1.5 shrink-0"
+          className="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-lg shadow-teal-600/30 transition-all flex items-center space-x-1.5 shrink-0"
         >
           <Sparkles className="w-4 h-4 text-amber-300" />
           <span>View Next-Step Recommendations</span>
@@ -96,10 +96,10 @@ export const WeaknessAnalysisPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         {/* Recharts Bar Chart: Topic Accuracy */}
-        <div className="lg:col-span-7 p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+        <div className="lg:col-span-7 p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h3 className="text-base font-bold text-white flex items-center">
-              <TrendingUp className="w-4 h-4 mr-2 text-purple-400" /> Topic Accuracy (%)
+              <TrendingUp className="w-4 h-4 mr-2 text-teal-400" /> Topic Accuracy (%)
             </h3>
             <span className="text-xs font-mono text-slate-400">Target: &gt;75%</span>
           </div>
@@ -123,10 +123,10 @@ export const WeaknessAnalysisPage: React.FC = () => {
         </div>
 
         {/* Donut Distribution Chart */}
-        <div className="lg:col-span-5 p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+        <div className="lg:col-span-5 p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h3 className="text-base font-bold text-white flex items-center">
-              <PieIcon className="w-4 h-4 mr-2 text-indigo-400" /> Mastery Distribution
+              <PieIcon className="w-4 h-4 mr-2 text-emerald-400" /> Mastery Distribution
             </h3>
           </div>
 
@@ -157,7 +157,7 @@ export const WeaknessAnalysisPage: React.FC = () => {
       </div>
 
       {/* Topic Accuracy Table */}
-      <div className="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/20 glass-panel space-y-4">
+      <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 glass-panel space-y-4">
         <h3 className="text-base font-bold text-white">Topic Performance Summary</h3>
 
         <div className="overflow-x-auto">
@@ -190,9 +190,9 @@ export const WeaknessAnalysisPage: React.FC = () => {
                   <td className="py-4 px-4 text-right">
                     <Link
                       to={`/learn/${row.topic.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-xs text-purple-400 hover:text-purple-300 font-semibold"
+                      className="text-xs text-teal-400 hover:text-teal-300 font-semibold"
                     >
-                      Practice Topic →
+                      Practice Topic â†’
                     </Link>
                   </td>
                 </tr>
@@ -205,3 +205,4 @@ export const WeaknessAnalysisPage: React.FC = () => {
     </div>
   );
 };
+
