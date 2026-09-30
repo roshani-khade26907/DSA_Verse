@@ -1,0 +1,8 @@
+{
+  "name": "DSAverse | Learn DSA Smarter",
+  "description": "DSAverse - The complete, interactive DSA learning platform designed for engineering students. Learn C++ Data Structures & Algorithms with structured roadmaps, live code editor, weakness analytics, and an AI Mentor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
